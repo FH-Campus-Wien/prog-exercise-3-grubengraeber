@@ -3,6 +3,7 @@ package at.ac.fhcampuswien.calendar.controller;
 public class CalendarController {
 
     private final int NUMBER_OF_SIGNS_IN_ONE_CALENDAR_LINE = 21;
+
     public String calculateCalendarString(int dayCountThisMonth, int startingDayIndex) {
         String result = "";
         result += getWhiteSpacesAtTheBeginning(startingDayIndex);
