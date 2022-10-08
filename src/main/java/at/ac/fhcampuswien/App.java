@@ -4,13 +4,13 @@ import at.ac.fhcampuswien.arraySwapper.controller.SwapController;
 import at.ac.fhcampuswien.calendar.controller.CalendarController;
 import at.ac.fhcampuswien.calendar.view.CalendarDisplay;
 import at.ac.fhcampuswien.camelCase.controller.CamelCaseConverter;
+import at.ac.fhcampuswien.checkDigit.controller.CheckDigitCalculator;
 import at.ac.fhcampuswien.guessingGame.controller.GameController;
 import at.ac.fhcampuswien.guessingGame.view.GameView;
 import at.ac.fhcampuswien.randomNumbers.controller.RandomNumberController;
 import at.ac.fhcampuswien.util.AsciiConverter;
 import at.ac.fhcampuswien.util.InputValidator;
 
-import java.util.Arrays;
 import java.util.Optional;
 import java.util.Random;
 import java.util.Scanner;
@@ -29,10 +29,7 @@ public class App {
     private static final int BIGGEST_RANDOM_NUMBER = 101;
 
     public static void main(String[] args) {
-        oneMonthCalendar(28, 1);
-        System.out.println(Arrays.toString(lcg(0)));
-        guessingGame(19);
-        System.out.println("result = " + camelCase("OK ich . gehE jetZT einKaufen!"));
+
     }
 
     public static void oneMonthCalendar(int dayCountThisMonth, int startingDayIndex) {
@@ -103,5 +100,11 @@ public class App {
         CamelCaseConverter camelCaseConverter = new CamelCaseConverter(asciiConverter);
         String formattedText = camelCaseConverter.formatText(textToFormat);
         return formattedText;
+    }
+
+    public static int checkDigit(int[] numbers) {
+        CheckDigitCalculator checkDigitCalculator = new CheckDigitCalculator();
+        int checkDigit = checkDigitCalculator.calculateCheckDigit(numbers);
+        return checkDigit;
     }
 }
