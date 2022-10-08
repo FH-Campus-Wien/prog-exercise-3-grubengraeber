@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien;
 
+import at.ac.fhcampuswien.arraySwapper.controller.SwapController;
 import at.ac.fhcampuswien.calendar.controller.CalendarController;
 import at.ac.fhcampuswien.calendar.view.CalendarDisplay;
 import at.ac.fhcampuswien.guessingGame.controller.GameController;
@@ -82,5 +83,15 @@ public class App {
 
     public static int randomNumberBetweenOneAndHundred() {
         return random.nextInt(SMALLEST_RANDOM_NUMBER, BIGGEST_RANDOM_NUMBER);
+    }
+
+    public static boolean swapArrays(int[] arrayOne, int[] arrayTwo) {
+        SwapController swapController = new SwapController();
+        boolean arraysHaveSameLength = swapController.haveSameLength(arrayOne, arrayTwo);
+        if (arraysHaveSameLength) {
+            swapController.swapArrays(arrayOne, arrayTwo);
+            return true;
+        }
+        return false;
     }
 }
