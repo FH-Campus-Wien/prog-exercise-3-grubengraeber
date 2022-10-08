@@ -82,7 +82,9 @@ public class App {
     }
 
     public static int randomNumberBetweenOneAndHundred() {
-        return new Random().nextInt(SMALLEST_RANDOM_NUMBER, BIGGEST_RANDOM_NUMBER);
+        // SMALLEST_RANDOM_NUMBER
+        // BIGGEST_RANDOM_NUMBER
+        return new Random().nextInt(1, 101);
     }
 
     public static boolean swapArrays(int[] arrayOne, int[] arrayTwo) {
