@@ -20,7 +20,6 @@ public class App {
     // Implement all methods as public static
 
     private static final Scanner scanner = new Scanner(System.in);
-    private static final Random random = new Random();
     private static final InputValidator inputValidator = new InputValidator();
     private static final AsciiConverter asciiConverter = new AsciiConverter();
 
@@ -83,7 +82,7 @@ public class App {
     }
 
     public static int randomNumberBetweenOneAndHundred() {
-        return random.nextInt(SMALLEST_RANDOM_NUMBER, BIGGEST_RANDOM_NUMBER);
+        return new Random().nextInt(SMALLEST_RANDOM_NUMBER, BIGGEST_RANDOM_NUMBER);
     }
 
     public static boolean swapArrays(int[] arrayOne, int[] arrayTwo) {
