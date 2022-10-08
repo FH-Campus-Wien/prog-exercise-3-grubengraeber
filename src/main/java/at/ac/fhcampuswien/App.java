@@ -25,7 +25,7 @@ public class App {
 
     private static final int NUMBER_OF_ROUNDS = 10;
     private static final int SMALLEST_RANDOM_NUMBER = 1;
-    private static final int BIGGEST_RANDOM_NUMBER = 101;
+    private static final int BIGGEST_RANDOM_NUMBER = 100;
 
     public static void main(String[] args) {
 
@@ -83,8 +83,7 @@ public class App {
 
     public static int randomNumberBetweenOneAndHundred() {
         // SMALLEST_RANDOM_NUMBER
-        // BIGGEST_RANDOM_NUMBER
-        return new Random().nextInt(1, 101);
+        return new Random().nextInt(BIGGEST_RANDOM_NUMBER);
     }
 
     public static boolean swapArrays(int[] arrayOne, int[] arrayTwo) {
