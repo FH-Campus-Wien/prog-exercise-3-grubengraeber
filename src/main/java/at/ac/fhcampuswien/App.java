@@ -3,9 +3,11 @@ package at.ac.fhcampuswien;
 import at.ac.fhcampuswien.arraySwapper.controller.SwapController;
 import at.ac.fhcampuswien.calendar.controller.CalendarController;
 import at.ac.fhcampuswien.calendar.view.CalendarDisplay;
+import at.ac.fhcampuswien.camelCase.controller.CamelCaseConverter;
 import at.ac.fhcampuswien.guessingGame.controller.GameController;
 import at.ac.fhcampuswien.guessingGame.view.GameView;
 import at.ac.fhcampuswien.randomNumbers.controller.RandomNumberController;
+import at.ac.fhcampuswien.util.AsciiConverter;
 import at.ac.fhcampuswien.util.InputValidator;
 
 import java.util.Arrays;
@@ -20,6 +22,7 @@ public class App {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Random random = new Random();
     private static final InputValidator inputValidator = new InputValidator();
+    private static final AsciiConverter asciiConverter = new AsciiConverter();
 
     private static final int NUMBER_OF_ROUNDS = 10;
     private static final int SMALLEST_RANDOM_NUMBER = 1;
@@ -29,6 +32,7 @@ public class App {
         oneMonthCalendar(28, 1);
         System.out.println(Arrays.toString(lcg(0)));
         guessingGame(19);
+        System.out.println("result = " + camelCase("OK ich . gehE jetZT einKaufen!"));
     }
 
     public static void oneMonthCalendar(int dayCountThisMonth, int startingDayIndex) {
@@ -93,5 +97,11 @@ public class App {
             return true;
         }
         return false;
+    }
+
+    public static String camelCase(String textToFormat) {
+        CamelCaseConverter camelCaseConverter = new CamelCaseConverter(asciiConverter);
+        String formattedText = camelCaseConverter.formatText(textToFormat);
+        return formattedText;
     }
 }
